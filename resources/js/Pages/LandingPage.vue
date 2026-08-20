@@ -157,7 +157,8 @@ const handleImageError = (e) => {
               </div>
               <div>
                 <span class="block text-[10px] text-[#657078] uppercase font-semibold">Local</span>
-                <span class="text-xs sm:text-sm font-bold text-[#0E2340]" title="UnP - Salgado Filho (Semana de Psicologia)">UnP • Salgado Filho</span>
+                <span class="block text-xs sm:text-sm font-bold text-[#0E2340] leading-tight">UnP</span>
+                <span class="block text-[11px] font-semibold text-[#0E2340] leading-tight">Salgado Filho</span>
               </div>
             </div>
 
