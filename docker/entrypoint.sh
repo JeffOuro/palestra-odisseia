@@ -16,6 +16,14 @@ if [ -z "$APP_KEY" ]; then
     export APP_KEY="base64:TLD6c7i30T7QY45RGOs6rXR1u2p99urzGnDz+dJwZNw="
 fi
 
+if [ -z "$APP_URL" ]; then
+    export APP_URL="https://palestra.odisseiafilosofica.com.br"
+fi
+
+if [ -z "$ASSET_URL" ]; then
+    export ASSET_URL="https://palestra.odisseiafilosofica.com.br"
+fi
+
 export DB_CONNECTION=sqlite
 export DB_DATABASE=/var/www/html/database/database.sqlite
 export SESSION_DRIVER=file
