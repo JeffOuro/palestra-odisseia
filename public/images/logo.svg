@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="600" height="240">
+  <!-- Owl Icon -->
+  <g transform="translate(100, 0)">
+    <path d="M 30,50 Q 50,15 80,40 Q 110,15 130,50" fill="#DDBB7D" stroke="#1B4D7E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 30,50 C 15,100 20,160 40,190 C 55,210 105,210 120,190 C 140,160 145,100 130,50 Z" fill="#EAD9B8" stroke="#1B4D7E" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="58" cy="88" r="28" fill="#F8F7F4" stroke="#1B4D7E" stroke-width="6"/>
+    <circle cx="102" cy="88" r="28" fill="#F8F7F4" stroke="#1B4D7E" stroke-width="6"/>
+    <circle cx="58" cy="88" r="18" fill="none" stroke="#1B4D7E" stroke-width="5"/>
+    <circle cx="102" cy="88" r="18" fill="none" stroke="#1B4D7E" stroke-width="5"/>
+    <polygon points="74,98 86,98 80,116" fill="#1B4D7E"/>
+    <path d="M 80,120 C 50,135 50,175 80,195 C 110,175 110,135 80,120 Z" fill="#DDBB7D" stroke="#1B4D7E" stroke-width="5"/>
+    <path d="M 80,135 C 65,145 65,165 80,180 C 95,165 95,145 80,135 Z" fill="#F8F7F4" stroke="#1B4D7E" stroke-width="4"/>
+    <path d="M 52,198 L 52,210 M 60,198 L 60,212 M 68,198 L 68,210" stroke="#1B4D7E" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 92,198 L 92,210 M 100,198 L 100,212 M 108,198 L 108,210" stroke="#1B4D7E" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="260" y1="30" x2="260" y2="195" stroke="#7A4E2B" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Monogram OF -->
+  <text x="285" y="145" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="100" font-weight="600" fill="#1B4D7E" letter-spacing="-2">OF</text>
+
+  <!-- Subtitle Text ODISSEIA FILOSÓFICA -->
+  <text x="300" y="230" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="30" font-weight="600" fill="#7A4E2B" letter-spacing="9">ODISSEIA FILOSÓFICA</text>
+</svg>

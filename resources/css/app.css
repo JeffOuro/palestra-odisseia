@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0E2340;
+  --color-forest: #2E4A3D;
+  --color-gold: #B18A47;
+  --color-gold-hover: #9B7739;
+  --color-gold-light: #E7D7B5;
+  --color-paper: #F8F7F4;
+  --color-parchment: #E9E2D3;
+  --color-brown: #6A5542;
+  --color-graphite: #18232C;
+  --color-slate-blue: #657078;
+  --color-dark-navy: #091A2F;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  html, body {
+    background-color: var(--color-paper);
+    color: var(--color-graphite);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: var(--font-serif);
+  }
+
+  .font-cinzel-heading {
+    font-family: var(--font-cinzel);
+  }
+}
+
+/* Premium Gold CTA Button */
+.btn-gold-cta {
+  background: linear-gradient(135deg, #E6D2A9 0%, #CBB079 25%, #B18A47 60%, #8A682D 100%);
+  color: #091A2F;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(138, 104, 45, 0.5);
+  box-shadow: 0 10px 30px -5px rgba(177, 138, 71, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold-cta:hover {
+  background: linear-gradient(135deg, #EFE1BF 0%, #D8BE88 25%, #C29A53 60%, #9B7739 100%);
+  box-shadow: 0 15px 40px -4px rgba(177, 138, 71, 0.55), 0 4px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px) scale(1.005);
+}
+
+.btn-gold-cta:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 5px 15px -3px rgba(177, 138, 71, 0.3);
+}
+
+/* Shimmer Effect */
+.btn-gold-cta::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  animation: sweep 4s infinite ease-in-out;
+}
+
+@keyframes sweep {
+  0% { left: -60%; }
+  30% { left: 140%; }
+  100% { left: 140%; }
+}
+
+/* Gold Outline Button */
+.btn-gold-outline {
+  background: transparent;
+  color: #0E2340;
+  border: 1.5px solid #B18A47;
+  transition: all 0.2s ease;
+}
+
+.btn-gold-outline:hover {
+  background: rgba(177, 138, 71, 0.08);
+  border-color: #8A682D;
+  transform: translateY(-1px);
+}
+
+/* Custom Gradients & Shadows */
+.bg-navy-gradient {
+  background: linear-gradient(180deg, #091A2F 0%, #0E2340 100%);
+}
+
+.shadow-navy-depth {
+  box-shadow: 0 25px 60px -12px rgba(9, 26, 47, 0.25);
+}
+
+.shadow-gold-subtle {
+  box-shadow: 0 10px 30px rgba(177, 138, 71, 0.2);
+}
