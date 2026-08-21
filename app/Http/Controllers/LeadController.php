@@ -20,24 +20,31 @@ class LeadController extends Controller
             'email.email' => 'Por favor, informe um e-mail válido.',
         ]);
 
-        $lead = Lead::create([
-            'nome' => $validated['nome'],
-            'email' => $validated['email'],
-            'whatsapp' => $validated['whatsapp'] ?? null,
-            'palestra_nome' => 'Angústia e Existência: uma leitura fenomenológico-existencial em Heidegger, Sartre e Camus',
-            'ip_address' => $request->ip(),
-        ]);
+        $cleanNome = trim(strip_tags($validated['nome']));
+        $cleanEmail = strtolower(trim($validated['email']));
+        $cleanWhatsapp = isset($validated['whatsapp']) ? trim(strip_tags($validated['whatsapp'])) : null;
+
+        // Upsert lead data based on email to prevent duplicates and maintain integrity
+        $lead = Lead::updateOrCreate(
+            ['email' => $cleanEmail],
+            [
+                'nome' => $cleanNome,
+                'whatsapp' => $cleanWhatsapp,
+                'palestra_nome' => 'Angústia e Existência: uma leitura fenomenológico-existencial em Heidegger, Sartre e Camus',
+                'ip_address' => $request->ip(),
+            ]
+        );
 
         if ($request->wantsJson()) {
             return response()->json([
                 'success' => true,
-                'message' => 'Inscrição realizada com sucesso!',
+                'message' => 'Material liberado com sucesso!',
                 'download_url' => asset('material-palestra-angustia-existencia.pdf'),
                 'lead' => $lead,
             ]);
         }
 
-        return back()->with('success', 'Inscrição realizada com sucesso! Seu material já está liberado.');
+        return back()->with('success', 'Cadastro realizado com sucesso! Seu material já está liberado.');
     }
 
     public function index(Request $request)
@@ -63,7 +70,8 @@ class LeadController extends Controller
                 ];
             }
 
-            $content = implode(",", $csvHeader) . "\n";
+            $content = "\xEF\xBB\xBF"; // UTF-8 BOM for Excel compatibility
+            $content .= implode(",", $csvHeader) . "\n";
             foreach ($csvRows as $row) {
                 $content .= implode(",", $row) . "\n";
             }
